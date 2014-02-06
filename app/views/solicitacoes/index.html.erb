@@ -1,0 +1,35 @@
+<h1>Listing solicitacoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Data</th>
+      <th>Desconto</th>
+      <th>Pagamento</th>
+      <th>Pessoa</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitacoes.each do |solicitacao| %>
+      <tr>
+        <td><%= solicitacao.status %></td>
+        <td><%= solicitacao.data %></td>
+        <td><%= solicitacao.desconto %></td>
+        <td><%= solicitacao.pagamento %></td>
+        <td><%= solicitacao.pessoa %></td>
+        <td><%= link_to 'Show', solicitacao %></td>
+        <td><%= link_to 'Edit', edit_solicitacao_path(solicitacao) %></td>
+        <td><%= link_to 'Destroy', solicitacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitacao', new_solicitacao_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @compra_materia_prima.data %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @compra_materia_prima.status %>
+</p>
+
+<p>
+  <strong>Pagamento:</strong>
+  <%= @compra_materia_prima.pagamento %>
+</p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @compra_materia_prima.fornecedor %>
+</p>
+
+<%= link_to 'Edit', edit_compra_materia_prima_path(@compra_materia_prima) %> |
+<%= link_to 'Back', compra_materias_primas_path %>

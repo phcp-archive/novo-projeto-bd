@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @materia_prima.nome %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @materia_prima.codigo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @materia_prima.descricao %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @materia_prima.quantidade %>
+</p>
+
+<%= link_to 'Edit', edit_materia_prima_path(@materia_prima) %> |
+<%= link_to 'Back', materias_primas_path %>

@@ -1,0 +1,33 @@
+<h1>Listing compra_produtos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Status</th>
+      <th>Pagamento</th>
+      <th>Fornecedor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compra_produtos.each do |compra_produto| %>
+      <tr>
+        <td><%= compra_produto.data %></td>
+        <td><%= compra_produto.status %></td>
+        <td><%= compra_produto.pagamento %></td>
+        <td><%= compra_produto.fornecedor %></td>
+        <td><%= link_to 'Show', compra_produto %></td>
+        <td><%= link_to 'Edit', edit_compra_produto_path(compra_produto) %></td>
+        <td><%= link_to 'Destroy', compra_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Compra produto', new_compra_produto_path %>

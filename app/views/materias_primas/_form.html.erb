@@ -1,0 +1,35 @@
+<%= simple_form_for(@materia_prima) do |f| %>
+  <% if @materia_prima.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@materia_prima.errors.count, "error") %> prohibited this materia_prima from being saved:</h2>
+
+      <ul>
+      <% @materia_prima.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.association :compra_materias_primas %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :codigo %><br>
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :quantidade %><br>
+    <%= f.number_field :quantidade %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

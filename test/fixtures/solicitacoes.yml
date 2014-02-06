@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  data: 2014-02-05 01:11:22
+  desconto: 1.5
+  pagamento: 1.5
+  pessoa_id: 
+
+two:
+  status: 1
+  data: 2014-02-05 01:11:22
+  desconto: 1.5
+  pagamento: 1.5
+  pessoa_id: 
