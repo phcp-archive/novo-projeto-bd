@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205041659) do
+ActiveRecord::Schema.define(version: 20140206055048) do
 
   create_table "compra_materias_primas", force: true do |t|
     t.datetime "data"
@@ -68,6 +68,27 @@ ActiveRecord::Schema.define(version: 20140205041659) do
     t.datetime "updated_at"
   end
 
+  create_table "materia_compradas", force: true do |t|
+    t.integer  "materia_prima_id"
+    t.integer  "compra_materia_prima_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materia_prima_compradas", force: true do |t|
+    t.integer  "materia_prima_id"
+    t.integer  "compra_materia_prima_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "materia_utilizadas", force: true do |t|
+    t.integer  "materia_prima_id"
+    t.integer  "producao_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "materias_primas", force: true do |t|
     t.string   "nome"
     t.string   "codigo"
@@ -75,16 +96,6 @@ ActiveRecord::Schema.define(version: 20140205041659) do
     t.integer  "quantidade"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "materias_primas_compra_materias_primas", id: false, force: true do |t|
-    t.integer "materia_prima_id"
-    t.integer "compra_materia_prima_id"
-  end
-
-  create_table "materias_primas_producoes", id: false, force: true do |t|
-    t.integer "materia_prima_id"
-    t.integer "producao_id"
   end
 
   create_table "pessoas", force: true do |t|
@@ -106,6 +117,20 @@ ActiveRecord::Schema.define(version: 20140205041659) do
 
   add_index "producoes", ["produto_id"], name: "index_producoes_on_produto_id"
 
+  create_table "produto_comprados", force: true do |t|
+    t.integer  "produto_id"
+    t.integer  "compra_produto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "produto_solicitados", force: true do |t|
+    t.integer  "produto_id"
+    t.integer  "solicitacao_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "produtos", force: true do |t|
     t.string   "nome"
     t.float    "preco"
@@ -114,16 +139,6 @@ ActiveRecord::Schema.define(version: 20140205041659) do
     t.integer  "quantidade"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "produtos_compra_produtos", id: false, force: true do |t|
-    t.integer "produto_id"
-    t.integer "compra_produto_id"
-  end
-
-  create_table "produtos_solicitacoes", id: false, force: true do |t|
-    t.integer "produto_id"
-    t.integer "solicitacao_id"
   end
 
   create_table "solicitacoes", force: true do |t|

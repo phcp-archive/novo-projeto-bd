@@ -6,4 +6,5 @@ class Pessoa < ActiveRecord::Base
 	accepts_nested_attributes_for :telefone, :allow_destroy => true
 	
 	has_many :solicitacoes
+	accepts_nested_attributes_for :solicitacoes
 end

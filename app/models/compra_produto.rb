@@ -1,4 +1,7 @@
 class CompraProduto < ActiveRecord::Base
 	belongs_to :fornecedor
-	has_and_belongs_to_many :produtos
+
+	has_many :produto_comprados
+	has_many :produto, :through => :produto_comprados
+	accepts_nested_attributes_for :produto
 end

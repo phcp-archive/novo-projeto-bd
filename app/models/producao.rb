@@ -1,4 +1,7 @@
 class Producao < ActiveRecord::Base
-	has_and_belongs_to_many :materias_primas
 	belongs_to :produto
+
+	has_many :materia_usadas
+	has_many :materia_prima, :through => :materia_usadas
+	accepts_nested_attributes_for :materia_prima
 end
