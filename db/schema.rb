@@ -75,13 +75,6 @@ ActiveRecord::Schema.define(version: 20140206055048) do
     t.datetime "updated_at"
   end
 
-  create_table "materia_prima_compradas", force: true do |t|
-    t.integer  "materia_prima_id"
-    t.integer  "compra_materia_prima_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "materia_utilizadas", force: true do |t|
     t.integer  "materia_prima_id"
     t.integer  "producao_id"

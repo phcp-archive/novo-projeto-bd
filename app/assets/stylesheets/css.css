@@ -1,0 +1,130 @@
+.navbar {
+	background-color: #E6E7E8;
+	border-bottom: none;
+}
+
+.map {
+background-color: #FF00FF;
+padding-bottom: 30px;
+color: white;
+}
+
+.container.map {
+width: 100%;
+}
+
+.brand {
+    max-height: 40px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.white {
+	background-color: #FFFFFF;
+}
+
+.map {
+	background-color: #8E84B8;
+	padding-bottom: 30px;
+	color: white;
+}
+
+.contact {
+	background-color: #E9933C;
+	padding-bottom: 30px;
+	color: white;
+}
+
+.footer {
+  height: 60px;
+  background-color: #F5F5F5;
+}
+
+.options {
+	background-color: #877DAF;
+	height: 42.5px;
+	font-size: 30px;
+}
+
+.options2 {
+  background-color: #877DAF;
+  height: 42.5px;
+  font-size: 22.5px;
+}
+
+a {
+  color:#FFFFFF;
+  text-decoration:none;
+}
+
+table a {
+	color:#000000;
+	text-decoration:underline;
+}
+
+table	a:hover {
+	color:#000000;
+	text-decoration:underline;
+}
+a:active {
+	color:#00FF00;
+	text-decoration:none;
+	background-color:#000000;
+}
+
+body {
+  padding-top: 80px;
+  padding-bottom: 20px;
+  min-height: 100%
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+.form-control { margin-bottom: 10px; }
+
+* {
+  .border-radius(0) !important;
+}
+
+#field {
+    margin-bottom:20px;
+}
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
