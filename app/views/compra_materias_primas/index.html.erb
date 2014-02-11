@@ -7,6 +7,7 @@
       <th>Status</th>
       <th>Pagamento</th>
       <th>Fornecedor</th>
+      <th>Itens/Quantidades<th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,7 +20,12 @@
         <td><%= compra_materia_prima.data %></td>
         <td><%= compra_materia_prima.status %></td>
         <td><%= compra_materia_prima.pagamento %></td>
-        <td><%= compra_materia_prima.fornecedor %></td>
+        <td><%= compra_materia_prima.fornecedor.nome %></td>
+        <td>
+          <% compra_materia_prima.materia_compradas.each do |materia_comprada| %>
+          <%= materia_comprada.materia_prima.nome %>/<%= materia_comprada.quantidade %>, 
+          <% end %>
+        </td>
         <td><%= link_to 'Show', compra_materia_prima %></td>
         <td><%= link_to 'Edit', edit_compra_materia_prima_path(compra_materia_prima) %></td>
         <td><%= link_to 'Destroy', compra_materia_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -12,7 +12,14 @@
 
 <p>
   <strong>Produto:</strong>
-  <%= @producao.produto %>
+  <%= @producao.produto.nome %>
+</p>
+
+<p>
+	<strong>Itens/Quantidades:</strong>
+		<% @producao.materia_utilizadas.each do |materia_utilizada| %>
+    	<%= materia_utilizada.materia_prima.nome %>/<%= materia_utilizada.quantidade %>, 
+	    <% end %>
 </p>
 
 <%= link_to 'Edit', edit_producao_path(@producao) %> |

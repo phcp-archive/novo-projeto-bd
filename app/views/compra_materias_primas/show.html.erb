@@ -17,7 +17,14 @@
 
 <p>
   <strong>Fornecedor:</strong>
-  <%= @compra_materia_prima.fornecedor %>
+  <%= @compra_materia_prima.fornecedor.nome %>
+</p>
+
+<p>
+	<strong>Itens/Quantidades:</strong>
+		<% @compra_materia_prima.materia_compradas.each do |materia_comprada| %>
+    	<%= materia_comprada.materia_prima.nome %>/<%= materia_comprada.quantidade %>, 
+	    <% end %>
 </p>
 
 <%= link_to 'Edit', edit_compra_materia_prima_path(@compra_materia_prima) %> |

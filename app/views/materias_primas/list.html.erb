@@ -1,0 +1,33 @@
+<h1>Listing materias_primas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Codigo</th>
+      <th>Descricao</th>
+      <th>Quantidade</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materias_primas.each do |materia_prima| %>
+      <tr>
+        <td><%= materia_prima.nome %></td>
+        <td><%= materia_prima.codigo %></td>
+        <td><%= materia_prima.descricao %></td>
+        <td><%= materia_prima.quantidade %></td>
+        <td><%= link_to 'Show', materia_prima %></td>
+        <td><%= link_to 'Edit', edit_materia_prima_path(materia_prima) %></td>
+        <td><%= link_to 'Destroy', materia_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Materia prima', new_materia_prima_path %>

@@ -1,4 +1,4 @@
-<%= form_for(@compra_materia_prima) do |f| %>
+<%= simple_form_for(@compra_materia_prima) do |f| %>
   <% if @compra_materia_prima.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@compra_materia_prima.errors.count, "error") %> prohibited this compra_materia_prima from being saved:</h2>
@@ -11,23 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :data %><br>
-    <%= f.datetime_select :data %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :pagamento %><br>
-    <%= f.text_field :pagamento %>
-  </div>
-  <div class="field">
-    <%= f.label :fornecedor_id %><br>
-    <%= f.text_field :fornecedor_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :data %>
+  <%= f.input :status %>
+  <%= f.input :pagamento %>
+  <%= f.association :fornecedor, :label_method => lambda { |fornecedor| "#{fornecedor.nome}" }%>
+   
+  <fieldset id="materias-primas"> 
+    <ol> 
+      <%= f.fields_for :materia_compradas do |ff| %>
+      <%= ff.input :quantidade %>
+      <%= ff.association :materia_prima, label_method: :nome, value_method: :id, include_blank: false %>
+
+      <%= link_to_remove_association "remove", ff%>
+      <% end %>
+    </ol>
+      <%= link_to_add_association 'Adicionar matéria-prima', f, :materia_compradas, 'data-association-insertion-node' => "#materias-primas ol", 'data-association-insertion-method' => "append"%> 
+  </fieldset>
+  <br>
+  <%= f.button :submit %>
 <% end %>

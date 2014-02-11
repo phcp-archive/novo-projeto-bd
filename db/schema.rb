@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206055048) do
+ActiveRecord::Schema.define(version: 20140208080806) do
 
   create_table "compra_materias_primas", force: true do |t|
     t.datetime "data"
@@ -73,13 +73,7 @@ ActiveRecord::Schema.define(version: 20140206055048) do
     t.integer  "compra_materia_prima_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "materia_prima_compradas", force: true do |t|
-    t.integer  "materia_prima_id"
-    t.integer  "compra_materia_prima_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "quantidade"
   end
 
   create_table "materia_utilizadas", force: true do |t|
@@ -87,6 +81,7 @@ ActiveRecord::Schema.define(version: 20140206055048) do
     t.integer  "producao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantidade"
   end
 
   create_table "materias_primas", force: true do |t|
@@ -122,6 +117,7 @@ ActiveRecord::Schema.define(version: 20140206055048) do
     t.integer  "compra_produto_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantidade"
   end
 
   create_table "produto_solicitados", force: true do |t|
@@ -129,6 +125,7 @@ ActiveRecord::Schema.define(version: 20140206055048) do
     t.integer  "solicitacao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantidade"
   end
 
   create_table "produtos", force: true do |t|

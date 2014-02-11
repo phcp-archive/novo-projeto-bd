@@ -1,6 +1,6 @@
 class MateriaPrima < ActiveRecord::Base
-	has_many :materia_usadas
-	has_many :producoes, :through => :materia_usadas
+	has_many :materia_utilizadas
+	has_many :producoes, :through => :materia_utilizadas
 	accepts_nested_attributes_for :producoes
 
 	has_many :materia_compradas

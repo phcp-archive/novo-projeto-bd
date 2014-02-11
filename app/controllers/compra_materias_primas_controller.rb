@@ -25,9 +25,13 @@ class CompraMateriasPrimasController < ApplicationController
   # POST /compra_materias_primas.json
   def create
     @compra_materia_prima = CompraMateriaPrima.new(compra_materia_prima_params)
-
     respond_to do |format|
       if @compra_materia_prima.save
+        @compra_materia_prima.materia_compradas.each do |item|
+          i = MateriaPrima.find(item.materia_prima_id)
+          i.quantidade = i.quantidade + item.quantidade
+          i.save
+        end
         format.html { redirect_to @compra_materia_prima, notice: 'Compra materia prima was successfully created.' }
         format.json { render action: 'show', status: :created, location: @compra_materia_prima }
       else
@@ -54,6 +58,11 @@ class CompraMateriasPrimasController < ApplicationController
   # DELETE /compra_materias_primas/1
   # DELETE /compra_materias_primas/1.json
   def destroy
+     @compra_materia_prima.materia_compradas.each do |item|
+      i = MateriaPrima.find(item.materia_prima_id)
+      i.quantidade = i.quantidade - item.quantidade
+      i.save
+    end
     @compra_materia_prima.destroy
     respond_to do |format|
       format.html { redirect_to compra_materias_primas_url }
@@ -69,6 +78,6 @@ class CompraMateriasPrimasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compra_materia_prima_params
-      params.require(:compra_materia_prima).permit(:data, :status, :pagamento, :fornecedor_id)
+      params.require(:compra_materia_prima).permit(:data, :status, :pagamento, :fornecedor_id, :materia_compradas_attributes => [:id, :quantidade, :_destroy, :materia_prima_id])
     end
 end

@@ -12,6 +12,10 @@ class FornecedoresController < ApplicationController
   def show
   end
 
+  def search
+   
+  end
+
   # GET /fornecedores/new
   def new
     @fornecedor = Fornecedor.new

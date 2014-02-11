@@ -44,3 +44,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+
+gem "twitter-bootstrap-rails"
+
+gem 'cocoon'

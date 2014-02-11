@@ -8,6 +8,7 @@
       <th>Desconto</th>
       <th>Pagamento</th>
       <th>Pessoa</th>
+      <th>Itens/Quantidades<th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,7 +22,12 @@
         <td><%= solicitacao.data %></td>
         <td><%= solicitacao.desconto %></td>
         <td><%= solicitacao.pagamento %></td>
-        <td><%= solicitacao.pessoa %></td>
+        <td><%= solicitacao.pessoa.nome %></td>
+        <td>
+          <% solicitacao.produto_solicitados.each do |produto_solicitado| %>
+          <%= produto_solicitado.produto.nome %>/<%= produto_solicitado.quantidade %>, 
+          <% end %>
+        </td>
         <td><%= link_to 'Show', solicitacao %></td>
         <td><%= link_to 'Edit', edit_solicitacao_path(solicitacao) %></td>
         <td><%= link_to 'Destroy', solicitacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>

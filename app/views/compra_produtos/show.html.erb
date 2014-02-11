@@ -17,8 +17,17 @@
 
 <p>
   <strong>Fornecedor:</strong>
-  <%= @compra_produto.fornecedor %>
+  <%= @compra_produto.fornecedor.nome %>
 </p>
+
+<p>
+
+
+</p>
+	<strong>Itens/Quantidades:</strong> 
+	<% @compra_produto.produto_comprados.each do |produto_comprado| %>
+    	<%= produto_comprado.produto.nome %>/<%= produto_comprado.quantidade %>, 
+    <% end %>
 
 <%= link_to 'Edit', edit_compra_produto_path(@compra_produto) %> |
 <%= link_to 'Back', compra_produtos_path %>

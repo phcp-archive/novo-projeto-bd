@@ -1,4 +1,4 @@
-<%= form_for(@solicitacao) do |f| %>
+<%= simple_form_for(@solicitacao) do |f| %>
   <% if @solicitacao.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@solicitacao.errors.count, "error") %> prohibited this solicitacao from being saved:</h2>
@@ -27,10 +27,20 @@
     <%= f.label :pagamento %><br>
     <%= f.text_field :pagamento %>
   </div>
-  <div class="field">
-    <%= f.label :pessoa_id %><br>
-    <%= f.text_field :pessoa_id %>
-  </div>
+   <%= f.association :pessoa, :label_method => lambda { |pessoa| "#{pessoa.nome}" }%>
+
+   <fieldset id="produtos"> 
+    <ol> 
+      <%= f.fields_for :produto_solicitados do |ff| %>
+      <%= ff.input :quantidade %>
+      <%= ff.association :produto, label_method: :nome, value_method: :id, include_blank: false %>
+
+      <%= link_to_remove_association "remove", ff%>
+      <% end %>
+    </ol>
+      <%= link_to_add_association 'Adicionar produto', f, :produto_solicitados, 'data-association-insertion-node' => "#produtos ol", 'data-association-insertion-method' => "append"%> 
+  </fieldset>
+
   <div class="actions">
     <%= f.submit %>
   </div>

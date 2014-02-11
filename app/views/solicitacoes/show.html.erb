@@ -22,7 +22,14 @@
 
 <p>
   <strong>Pessoa:</strong>
-  <%= @solicitacao.pessoa %>
+  <%= @solicitacao.pessoa.nome %>
+</p>
+
+<p>
+  <strong>Itens/Quantidades:</strong>
+    <% @solicitacao.produto_solicitados.each do |produto_solicitado| %>
+      <%= produto_solicitado.produto.nome %>/<%= produto_solicitado.quantidade %>, 
+      <% end %>
 </p>
 
 <%= link_to 'Edit', edit_solicitacao_path(@solicitacao) %> |

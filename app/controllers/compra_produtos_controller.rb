@@ -28,6 +28,11 @@ class CompraProdutosController < ApplicationController
 
     respond_to do |format|
       if @compra_produto.save
+        @compra_produto.produto_comprados.each do |item|
+          i = Produto.find(item.produto_id)
+          i.quantidade = i.quantidade + item.quantidade
+          i.save
+        end
         format.html { redirect_to @compra_produto, notice: 'Compra produto was successfully created.' }
         format.json { render action: 'show', status: :created, location: @compra_produto }
       else
@@ -54,6 +59,11 @@ class CompraProdutosController < ApplicationController
   # DELETE /compra_produtos/1
   # DELETE /compra_produtos/1.json
   def destroy
+    @compra_produto.produto_comprados.each do |item|
+      i = Produto.find(item.produto_id)
+      i.quantidade = i.quantidade - item.quantidade
+      i.save
+    end
     @compra_produto.destroy
     respond_to do |format|
       format.html { redirect_to compra_produtos_url }
@@ -69,6 +79,6 @@ class CompraProdutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compra_produto_params
-      params.require(:compra_produto).permit(:data, :status, :pagamento, :fornecedor_id)
+      params.require(:compra_produto).permit(:data, :status, :pagamento, :fornecedor_id, :produto_comprados_attributes => [:id, :quantidade, :_destroy, :produto_id])
     end
 end

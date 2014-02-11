@@ -1,0 +1,8 @@
+<li class="control-group nested-fields">
+  <div class="controls">
+	<%= f.input :quantidade %>
+	<%= f.association :produto, label_method: :nome, value_method: :id, include_blank: false %>
+
+	<%= link_to_remove_association "remove", f%>
+ </div>
+</li>

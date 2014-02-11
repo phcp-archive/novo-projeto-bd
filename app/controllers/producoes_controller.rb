@@ -28,6 +28,14 @@ class ProducoesController < ApplicationController
 
     respond_to do |format|
       if @producao.save
+        p = Produto.find(@producao.produto_id)
+        p.quantidade = p.quantidade + @producao.quantidade
+        p.save
+        @producao.materia_utilizadas.each do |item|
+          i = MateriaPrima.find(item.materia_prima_id)
+          i.quantidade = i.quantidade - item.quantidade
+          i.save
+        end
         format.html { redirect_to @producao, notice: 'Producao was successfully created.' }
         format.json { render action: 'show', status: :created, location: @producao }
       else
@@ -54,6 +62,14 @@ class ProducoesController < ApplicationController
   # DELETE /producoes/1
   # DELETE /producoes/1.json
   def destroy
+    p = Produto.find(@producao.produto_id)
+    p.quantidade = p.quantidade - @producao.quantidade
+    p.save
+    @producao.materia_utilizadas.each do |item|
+      i = MateriaPrima.find(item.materia_prima_id)
+      i.quantidade = i.quantidade + item.quantidade
+      i.save
+    end
     @producao.destroy
     respond_to do |format|
       format.html { redirect_to producoes_url }
@@ -69,6 +85,6 @@ class ProducoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producao_params
-      params.require(:producao).permit(:data, :quantidade, :produto_id)
+      params.require(:producao).permit(:data, :quantidade, :produto_id, :materia_utilizadas_attributes => [:id, :quantidade, :_destroy, :materia_prima_id])
     end
 end

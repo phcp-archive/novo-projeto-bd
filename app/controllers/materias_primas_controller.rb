@@ -12,6 +12,10 @@ class MateriasPrimasController < ApplicationController
   def show
   end
 
+  def list
+    @materias_primas = MateriaPrima.where("quantidade > '10'")
+  end
+
   # GET /materias_primas/new
   def new
     @materia_prima = MateriaPrima.new

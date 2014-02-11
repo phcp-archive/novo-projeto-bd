@@ -6,6 +6,7 @@
       <th>Data</th>
       <th>Quantidade</th>
       <th>Produto</th>
+      <th>Itens/Quantidades<th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,7 +18,12 @@
       <tr>
         <td><%= producao.data %></td>
         <td><%= producao.quantidade %></td>
-        <td><%= producao.produto %></td>
+        <td><%= producao.produto.nome %></td>
+        <td>
+          <% producao.materia_utilizadas.each do |materia_utilizada| %>
+          <%= materia_utilizada.materia_prima.nome %>/<%= materia_utilizada.quantidade %>, 
+          <% end %>
+        </td>
         <td><%= link_to 'Show', producao %></td>
         <td><%= link_to 'Edit', edit_producao_path(producao) %></td>
         <td><%= link_to 'Destroy', producao, method: :delete, data: { confirm: 'Are you sure?' } %></td>

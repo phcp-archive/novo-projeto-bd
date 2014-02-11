@@ -1,0 +1,32 @@
+<h1>Listing solicitacoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Data</th>
+      <th>Desconto</th>
+      <th>Pagamento</th>
+      <th>Pessoa</th>
+      <th>Itens/Quantidades<th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitacoes.each do |solicitacao| %>
+      <tr>
+        <td><%= solicitacao.status %></td>
+        <td><%= solicitacao.data %></td>
+        <td><%= solicitacao.desconto %></td>
+        <td><%= solicitacao.pagamento %></td>
+        <td><%= solicitacao.pessoa.nome %></td>
+        <td>
+          <% solicitacao.produto_solicitados.each do |produto_solicitado| %>
+          <%= produto_solicitado.produto.nome %>/<%= produto_solicitado.quantidade %>, 
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', solicitacao %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

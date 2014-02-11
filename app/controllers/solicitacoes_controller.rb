@@ -7,6 +7,10 @@ class SolicitacoesController < ApplicationController
     @solicitacoes = Solicitacao.all
   end
 
+  def list
+    @solicitacoes = Solicitacao.all
+  end
+
   # GET /solicitacoes/1
   # GET /solicitacoes/1.json
   def show
@@ -28,6 +32,11 @@ class SolicitacoesController < ApplicationController
 
     respond_to do |format|
       if @solicitacao.save
+        @solicitacao.produto_solicitados.each do |item|
+          i = Produto.find(item.produto_id)
+          i.quantidade = i.quantidade - item.quantidade
+          i.save
+        end
         format.html { redirect_to @solicitacao, notice: 'Solicitacao was successfully created.' }
         format.json { render action: 'show', status: :created, location: @solicitacao }
       else
@@ -54,6 +63,11 @@ class SolicitacoesController < ApplicationController
   # DELETE /solicitacoes/1
   # DELETE /solicitacoes/1.json
   def destroy
+    @solicitacao.produto_solicitados.each do |item|
+          i = Produto.find(item.produto_id)
+          i.quantidade = i.quantidade + item.quantidade
+          i.save
+        end
     @solicitacao.destroy
     respond_to do |format|
       format.html { redirect_to solicitacoes_url }
@@ -69,6 +83,6 @@ class SolicitacoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def solicitacao_params
-      params.require(:solicitacao).permit(:status, :data, :desconto, :pagamento, :pessoa_id)
+      params.require(:solicitacao).permit(:status, :data, :desconto, :pagamento, :pessoa_id, :produto_solicitados_attributes => [:id, :quantidade, :_destroy, :produto_id])
     end
 end
