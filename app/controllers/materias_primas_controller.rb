@@ -4,7 +4,7 @@ class MateriasPrimasController < ApplicationController
   # GET /materias_primas
   # GET /materias_primas.json
   def index
-    @materias_primas = MateriaPrima.all
+    @materias_primas = MateriaPrima.search(params[:search], params[:id])
   end
 
   # GET /materias_primas/1

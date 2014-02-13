@@ -4,7 +4,8 @@ class PessoasController < ApplicationController
   # GET /pessoas
   # GET /pessoas.json
   def index
-    @pessoas = Pessoa.all
+  #  @pessoas = Pessoa.all
+    @pessoas = Pessoa.search(params[:search], params[:id])
   end
 
   # GET /pessoas/1

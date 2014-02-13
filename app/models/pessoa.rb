@@ -7,4 +7,12 @@ class Pessoa < ActiveRecord::Base
 	
 	has_many :solicitacoes
 	accepts_nested_attributes_for :solicitacoes
+
+	def self.search(search, id)
+		if search
+			where(['nome LIKE ?', "%#{search}%"])
+		else
+			scoped
+		end
+	end
 end

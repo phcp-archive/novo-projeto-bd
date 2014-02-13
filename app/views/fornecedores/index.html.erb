@@ -1,4 +1,13 @@
 <h1>Listing fornecedores</h1>
+
+<!--Form de busca-->
+<%= form_tag fornecedores_path, :method => 'get'  do %>
+   <%= text_field_tag :search, params[:search]%>
+   <%= submit_tag "Buscar", :nome => nil  %>
+ <% end %>
+<!--/Form de busca-->
+
+
 <table>
   <thead>
     <tr>

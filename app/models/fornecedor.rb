@@ -10,4 +10,12 @@ class Fornecedor < ActiveRecord::Base
 
 	has_many :compra_materias_primas
 	accepts_nested_attributes_for :compra_materias_primas
+
+	def self.search(search, id)
+		if search
+			where(['nome LIKE ?', "%#{search}%"])
+		else
+			scoped
+		end
+	end
 end

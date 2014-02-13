@@ -9,4 +9,12 @@ class Produto < ActiveRecord::Base
 	has_many :produto_solicitados
 	has_many :solicitacoes, :through => :produto_solicitados
 	accepts_nested_attributes_for :solicitacoes
+
+	def self.search(search, id)
+		if search
+			where(['nome LIKE ?', "%#{search}%"])
+		else
+			scoped
+		end
+	end
 end
