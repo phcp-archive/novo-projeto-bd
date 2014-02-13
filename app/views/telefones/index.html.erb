@@ -17,7 +17,7 @@
       <tr>
         <td><%= telefone.ddd %></td>
         <td><%= telefone.numero %></td>
-        <td><%= telefone.telefonavel %></td>
+        <td><%= telefone.telefonavel.nome %>/<%= telefone.telefonavel_type%></td>
         <td><%= link_to 'Show', telefone %></td>
         <td><%= link_to 'Edit', edit_telefone_path(telefone) %></td>
         <td><%= link_to 'Destroy', telefone, method: :delete, data: { confirm: 'Are you sure?' } %></td>

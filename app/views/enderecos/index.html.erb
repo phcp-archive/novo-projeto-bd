@@ -10,7 +10,7 @@
       <th>Complemento</th>
       <th>Estado</th>
       <th>Numero</th>
-      <th>Enderecavel</th>
+      <th>De quem?</th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,7 +27,7 @@
         <td><%= endereco.complemento %></td>
         <td><%= endereco.estado %></td>
         <td><%= endereco.numero %></td>
-        <td><%= endereco.enderecavel %></td>
+        <td><%= endereco.enderecavel.nome %>/<%= endereco.enderecavel_type%></td>
         <td><%= link_to 'Show', endereco %></td>
         <td><%= link_to 'Edit', edit_endereco_path(endereco) %></td>
         <td><%= link_to 'Destroy', endereco, method: :delete, data: { confirm: 'Are you sure?' } %></td>

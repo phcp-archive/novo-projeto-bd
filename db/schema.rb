@@ -73,10 +73,7 @@ ActiveRecord::Schema.define(version: 20140208080806) do
     t.integer  "compra_materia_prima_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
     t.integer  "quantidade"
-=======
->>>>>>> b849a54b2972e84c06220751ce6386e6701eacfb
   end
 
   create_table "materia_utilizadas", force: true do |t|
