@@ -1,4 +1,5 @@
 class MateriasPrimasController < ApplicationController
+  before_filter :require_user
   before_action :set_materia_prima, only: [:show, :edit, :update, :destroy]
 
   # GET /materias_primas

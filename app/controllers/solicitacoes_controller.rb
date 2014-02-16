@@ -1,4 +1,5 @@
 class SolicitacoesController < ApplicationController
+  before_filter :require_user
   before_action :set_solicitacao, only: [:show, :edit, :update, :destroy]
 
   # GET /solicitacoes

@@ -1,4 +1,5 @@
 class PessoasController < ApplicationController
+  before_filter :require_user
   before_action :set_pessoa, only: [:show, :edit, :update, :destroy]
 
   # GET /pessoas

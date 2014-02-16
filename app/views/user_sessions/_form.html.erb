@@ -1,0 +1,6 @@
+<%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+	<%= render "shared/error_messages", :target => @user_session %>
+	<%= f.text_field :email, placeholder: 'Seu E-mail' %>&nbsp;
+	<%= f.password_field :password, placeholder: 'Sua Senha' %>
+	<%= f.submit "Acessar" %>
+<% end %>

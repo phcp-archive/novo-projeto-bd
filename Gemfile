@@ -48,3 +48,5 @@ gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem "twitter-bootstrap-rails"
 
 gem 'cocoon'
+
+gem "authlogic", "~> 3.3.0"

@@ -1,4 +1,5 @@
 class TelefonesController < ApplicationController
+  before_filter :require_user
   before_action :set_telefone, only: [:show, :edit, :update, :destroy]
 
   # GET /telefones

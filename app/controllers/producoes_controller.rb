@@ -1,4 +1,5 @@
 class ProducoesController < ApplicationController
+  before_filter :require_user
   before_action :set_producao, only: [:show, :edit, :update, :destroy]
 
   # GET /producoes

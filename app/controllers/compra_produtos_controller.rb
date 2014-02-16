@@ -1,4 +1,5 @@
 class CompraProdutosController < ApplicationController
+  before_filter :require_user
   before_action :set_compra_produto, only: [:show, :edit, :update, :destroy]
 
   # GET /compra_produtos
