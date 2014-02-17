@@ -10,6 +10,10 @@
   <div clas="wrap">
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
+	<div class="navbar-form navbar-right">
+<% if (@current_user.present?) then %>
+		<button type="submit" class="btn btn-success" onclick="location.href= '/logout' ">Sair</button>
+    </div><!--/.navbar-collapse -->     
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -21,10 +25,7 @@
       </div>
     </div>
 
-    <div class="navbar-collapse collapse">
-<% if (@current_user.present?) then %>
-      <a href="/logout">Sair</a>
-    </div><!--/.navbar-collapse -->        
+       
   </div><!--/.navbar --> 
 <% end %>
 <%= yield %>

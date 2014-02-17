@@ -1,5 +1,8 @@
-<div class="navbar-collapse collapse">
-  <%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+
+<div class="jumbotron white">
+  <div class="container">
+	<div class="navbar-form navbar-right">
+ 	<%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
     <%= render "shared/error_messages", :target => @user_session %>
     <%= f.label :email %><br />
     <%= f.text_field :email %><br />
@@ -11,16 +14,13 @@
     <br />
     <%= f.submit "Login" %>
   <% end %>
-</div><!--/.navbar-collapse -->
-
-<div class="jumbotron white">
-  <div class="container">
+</div>
     <div class="row">
       <div class="col-md-6">
         <img class="img-responsive" src="/assets/antonioefilhos-logo.png">
       </div>
       <div class="col-md-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        <p>aaaaaaaaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
