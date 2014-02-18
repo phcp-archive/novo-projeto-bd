@@ -4,8 +4,9 @@ class SolicitacoesController < ApplicationController
 
   # GET /solicitacoes
   # GET /solicitacoes.json
+
   def index
-    @solicitacoes = Solicitacao.all
+    @solicitacoes = Solicitacao.search(params[:search], params[:id])
   end
 
   def list

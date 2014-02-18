@@ -1,5 +1,13 @@
 <h1>Listing solicitacoes</h1>
 
+<!--Form de busca-->
+<%= form_tag solicitacoes_path, :method => 'get'  do %>
+   <%= date_select :search, :begin_date %>
+   <%= date_select :search, :end_date %>
+   <%= submit_tag "Buscar" %>
+ <% end %>
+<!--/Form de busca-->
+
 <table>
   <thead>
     <tr>
