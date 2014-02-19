@@ -11,20 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :data %><br>
-    <%= f.datetime_select :data %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :pagamento %><br>
-    <%= f.text_field :pagamento %>
-  </div>
+
+    <%= f.input :data %><br>
+
+    <%= f.input :status %><br>
+
+    <%= f.input :pagamento %><br>
+
 
   <%= f.association :fornecedor, :label_method => lambda { |fornecedor| "#{fornecedor.nome}" }%>
+ 
    
   <fieldset id="produtos"> 
     <ol> 
