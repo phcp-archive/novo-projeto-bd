@@ -1,5 +1,7 @@
-<h1>Listing solicitacoes</h1>
+<div class="conteudo">
+<h1>Solicitacoes</h1>
 
+<div class="data">
 <!--Form de busca-->
 <%= form_tag solicitacoes_path, :method => 'get'  do %>
    <%= date_select :search, :begin_date %>
@@ -7,6 +9,8 @@
    <%= submit_tag "Buscar" %>
  <% end %>
 <!--/Form de busca-->
+</div>
+
 
 <table>
   <thead>
@@ -47,3 +51,4 @@
 <br>
 
 <%= link_to 'New Solicitacao', new_solicitacao_path %>
+</div>

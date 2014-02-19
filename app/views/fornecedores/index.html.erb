@@ -1,11 +1,14 @@
-<h1>Listing fornecedores</h1>
+<div class="conteudo">
+<h1>Fornecedores</h1>
 
+<div class="data">
 <!--Form de busca-->
 <%= form_tag fornecedores_path, :method => 'get'  do %>
    <%= text_field_tag :search, params[:search]%>
    <%= submit_tag "Buscar", :nome => nil  %>
  <% end %>
 <!--/Form de busca-->
+</div>
 
 
 <table>
@@ -41,3 +44,4 @@
 <br>
 
 <%= link_to 'New Fornecedor', new_fornecedor_path %>
+</div>

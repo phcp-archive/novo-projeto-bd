@@ -1,11 +1,14 @@
-<h1>Listing produtos</h1>
+<div class="conteudo">
+<h1>Produtos</h1>
 
+<div class="data">
 <!--Form de busca-->
 <%= form_tag produtos_path, :method => 'get'  do %>
    <%= text_field_tag :search, params[:search]%>
    <%= submit_tag "Buscar", :nome => nil  %>
  <% end %>
 <!--/Form de busca-->
+</div>
 
 <table>
   <thead>
@@ -40,3 +43,4 @@
 <br>
 
 <%= link_to 'New Produto', new_produto_path %>
+</div>

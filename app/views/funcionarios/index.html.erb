@@ -1,11 +1,14 @@
-<h1>Listing funcionarios</h1>
+<div class="conteudo">
+<h1>Funcionarios</h1>
 
+<div class="data">
 <!--Form de busca-->
 <%= form_tag funcionarios_path, :method => 'get'  do %>
    <%= text_field_tag :search, params[:search]%>
    <%= submit_tag "Buscar", :nome => nil  %>
  <% end %>
 <!--/Form de busca-->
+</div>
 
 <table>
   <thead>
@@ -42,3 +45,4 @@
 <br>
 
 <%= link_to 'New Funcionario', new_funcionario_path %>
+<div>

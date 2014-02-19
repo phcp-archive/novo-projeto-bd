@@ -59,14 +59,55 @@ a {
 }
 
 table a {
-	color:#000000;
-	text-decoration:underline;
+	color:#FFFFFF;
+	background-color:#E9933C;
 }
 
-table	a:hover {
-	color:#000000;
+table a:hover {
+	color:#FFFFFF;
 	text-decoration:underline;
+	background-color:#8E84B8;
 }
+
+
+.conteudo{
+
+margin-left:6%;
+
+}
+
+.data{
+
+margin-bottom:20px;
+margin-top: 20px;
+
+}
+
+input[type=submit] {
+
+color: #fff;
+background-color: #5cb85c;
+border-color: #4cae4c;
+border: 0px;
+
+}
+
+table, td
+{
+border: 1px solid #E9933C;
+padding:15px;
+
+}
+
+th
+{
+height:50px;
+background-color: #E9933C;
+color: #FFFFFF;
+border: 1px solid #FFFFFF;
+padding:15px;
+}
+
 a:active {
 	color:#00FF00;
 	text-decoration:none;
