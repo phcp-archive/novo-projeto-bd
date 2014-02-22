@@ -1,0 +1,18 @@
+Pendencias:
+	-Buscas por {
+		-Cliente
+		-Produto
+		-Materia-Prima
+		-fornecedor
+		-Funcionario
+		-Venda de produto por Intervalo de tempo
+	}
+	-Login no sistema
+	-Lista de Vendas (por cliente) e compras (por fornecedor)
+	-Relatorio Lucro liquido mensal
+	-Layout com bootstrap
+	-Linkar as telas
+
+Bugs:
+	-(opcional) ajeitar o item inicial nas telas de MANYTOMANY GGWP
+	-(simples) (opcional sqn) nao permitir que transaçoes sejam deletadas/alteradas. permitir que altere-se apenas o seu status
