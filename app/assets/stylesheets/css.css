@@ -49,9 +49,11 @@ width: 30%;
 }
 
 .options2 {
-  background-color: #877DAF;
-  height: 42.5px;
-  font-size: 22.5px;
+ background-color: #877DAF;
+font-size: 22.5px;
+margin-left: 10px;
+margin-bottom: 10px;
+width: 12%;
 }
 
 a {
