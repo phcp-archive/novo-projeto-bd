@@ -1,36 +1,48 @@
-<p>
-<b>Email:</b>
-<%=h @user.email %>
-</p>
+<div class="conteudo">
+<div class="row">
+      		<div class="col-md-6">
+      			<div class="alert alert-dismissable alert-info">
+             	<button type="button" class="close" data-dismiss="alert">&times;</button>
+              	<h3>Ola. Aqui e a tela inicial do sistema. Escolha uma das opcoes abaixo.</h3>
+            </div>
+      		</div>
+</div>
 
-<p>
-<b>Login count:</b>
-<%=h @user.login_count %>
-</p>
+<div class="row">
 
-<p>
-<b>Last request at:</b>
-<%=h @user.last_request_at %>
-</p>
+     		<div class="col-md-4">
+     			<a href="/compra_produtos"><img class="img-responsive" src="/assets/compra.PNG"></a>
+     		</div>
+			
+     		<div class="col-md-4">
+     			<a href="/solicitacoes"><img class="img-responsive" src="/assets/venda.PNG"></a>
+     		</div>
+     		<div class="col-md-4">
+     		<ul class="list-unstyled">
+     			<li class="options"><a href="/pessoas"><p class="text-center"> Clientes </p></a>
+     			</li>
+     			<br>
+     			<li class="options"><a href="/produtos"><p class="text-center"> Produtos </p></a>
+     				
+     			</li>
+     			<br>
+     			<li class="options"><a href="/fornecedores" ><p class="text-center"> Fornecedores </p></a>
+     				
+     			</li>
+     			<br>
+     			<li class="options"><a href="/materias_primas"><p class="text-center"> Materia-Prima </p></a>
+     				
+     			</li>
+     			<br>
+				<li class="options"><a href="/producoes"><p class="text-center"> Producoes </p></a>
+     			
+     			</li>
+				<br>
+     			<li class="options"><a href="/funcionarios"><p class="text-center"> Gerencia </p></a>
+     			
+     			</li>
+     		</ul>
+     		</div>
+     	</div>
 
-<p>
-<b>Last login at:</b>
-<%=h @user.last_login_at %>
-</p>
-
-<p>
-<b>Current login at:</b>
-<%=h @user.current_login_at %>
-</p>
-
-<p>
-<b>Last login ip:</b>
-<%=h @user.last_login_ip %>
-</p>
-
-<p>
-<b>Current login ip:</b>
-<%=h @user.current_login_ip %>
-</p>
-
-<%= link_to 'Edit Account', edit_account_path %>
+</div>

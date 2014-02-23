@@ -42,9 +42,10 @@ width: 100%;
 }
 
 .options {
-	background-color: #877DAF;
-	height: 42.5px;
-	font-size: 30px;
+background-color: #877DAF;
+height: 25px;
+font-size: 30px;
+width: 30%;
 }
 
 .options2 {
@@ -69,10 +70,15 @@ table a:hover {
 	background-color:#8E84B8;
 }
 
+.col-md-4 {
+width: 30.33333333333333%;
+}
 
 .conteudo{
 
 margin-left:6%;
+margin-top:2%;
+margin-bottom: 2%;
 
 }
 
@@ -123,7 +129,7 @@ position:relative;min-height:1px;padding-right:15px;padding-left:15px;
 }
 
 a:active {
-	color:#00FF00;
+
 	text-decoration:none;
 	background-color:#000000;
 }
