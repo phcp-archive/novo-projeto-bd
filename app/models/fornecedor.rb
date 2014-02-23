@@ -13,7 +13,7 @@ class Fornecedor < ActiveRecord::Base
 
 	def self.search(search, id)
 		if search
-			where(['nome LIKE ?', "%#{search}%"])
+			where(['nome LIKE ? OR cnpj LIKE ?', "%#{search}%", "%#{search}%"])
 		else
 			scoped
 		end

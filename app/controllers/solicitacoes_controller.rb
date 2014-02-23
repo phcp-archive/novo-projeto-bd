@@ -9,10 +9,6 @@ class SolicitacoesController < ApplicationController
     @solicitacoes = Solicitacao.search(params[:search], params[:id])
   end
 
-  def list
-    @solicitacoes = Solicitacao.all
-  end
-
   # GET /solicitacoes/1
   # GET /solicitacoes/1.json
   def show

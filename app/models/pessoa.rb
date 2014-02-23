@@ -10,7 +10,7 @@ class Pessoa < ActiveRecord::Base
 
 	def self.search(search, id)
 		if search
-			where(['nome LIKE ?', "%#{search}%"])
+			where(['nome LIKE ? OR cadastro LIKE ?', "%#{search}%", "%#{search}%"])
 		else
 			scoped
 		end

@@ -1,0 +1,106 @@
+<h1>Relatorio de lucro liquido mensal</h1>
+<div class="data">
+<!--Form de busca-->
+<%= form_tag relatorios_path, :method => 'get'  do %>
+   <%= date_select :search, :begin_date, {:discard_day => true} %>
+   <%= submit_tag "Buscar" %>
+ <% end %>
+<!--/Form de busca-->
+</div>
+
+<h2>Relatório do Mês - Lucro: R$ <%= @lucro %></h2>
+<div class="body">
+	<table>
+	  <thead>
+	    Compras de matéria-prima
+	    <tr>
+	      <th>Data</th>
+	      <th>Fornecedor/CNPJ</th>
+	      <th>Status</th>
+	      <th>Valor do pagamento</th>
+	      <th>Itens da compra</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @lista_compras_materia_prima.each do |compra| %>
+	      <tr>
+	        <td><%= compra.data %></td>
+	        <td><%= compra.fornecedor.nome %>/<%= compra.fornecedor.cnpj%></td>
+	        <td><%= compra.status %></td>
+	        <td><%= compra.pagamento %></td>
+	        <td>
+	          <% compra.materia_compradas.each do |item| %>
+	            -<%= item.materia_prima.nome %>,
+	            <%= item.quantidade %> unidade(s)
+	            <br>
+	          <% end %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+	<table>
+	  <thead>
+	    Compras de produtos
+	    <tr>
+	      <th>Data</th>
+	      <th>Fornecedor/CNPJ</th>
+	      <th>Status</th>
+	      <th>Valor do pagamento</th>
+	      <th>Itens da compra</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @lista_compras_produto.each do |compra| %>
+	      <tr>
+	        <td><%= compra.data %></td>
+	        <td><%= compra.fornecedor.nome %>/<%= compra.fornecedor.cnpj%></td>
+	        <td><%= compra.status %></td>
+	        <td><%= compra.pagamento %></td>
+	        <td>
+	          <% compra.produto_comprados.each do |item| %>
+	            -<%= item.produto.nome %>,
+	            <%= item.quantidade %> unidade(s)
+	            <br>
+	          <% end %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+	<table>
+	  <thead>
+	  	Vendas de produtos
+	    <tr>
+	      <th>Data</th>
+	      <th>Pessoa</th>
+	      <th>Status</th>
+	      <th>Desconto</th>
+	      <th>Pagamento</th>
+	      <th>Itens/Quantidades<th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @lista_solicitacoes.each do |solicitacao| %>
+	      <tr>
+	        <td><%= solicitacao.data %></td>
+	        <td><%= solicitacao.pessoa.nome %></td>
+	        <td><%= solicitacao.status %></td>
+	        <td><%= solicitacao.desconto %></td>
+	        <td><%= solicitacao.pagamento %></td>
+	        <td>
+	          <% solicitacao.produto_solicitados.each do |produto_solicitado| %>
+	          <%= produto_solicitado.produto.nome %>/<%= produto_solicitado.quantidade %>, 
+	          <% end %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+</div>

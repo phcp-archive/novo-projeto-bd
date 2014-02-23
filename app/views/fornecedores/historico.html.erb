@@ -1,0 +1,68 @@
+<div class="conteudo">
+<h1>Transações com o fornecedor</h1>
+
+<table>
+  <thead>
+    Compras de matéria-prima feitas ao fornecedor
+    <tr>
+      <th>Data</th>
+      <th>Status</th>
+      <th>Valor do pagamento</th>
+      <th>Itens da compra</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compras_materias_primas.each do |compra| %>
+      <tr>
+        <td><%= compra.data %></td>
+        <td><%= compra.status %></td>
+        <td><%= compra.pagamento %></td>
+        <td>
+          <% compra.materia_compradas.each do |item| %>
+            -<%= item.materia_prima.nome %>,
+            <%= item.quantidade %> unidade(s)
+            <br>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', compra %></td>
+        <td><%= link_to 'Edit', edit_compra_materia_prima_path(compra) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    Compras de produto feitas ao fornecedor
+    <tr>
+      <th>Data</th>
+      <th>Status</th>
+      <th>Valor do pagamento</th>
+      <th>Itens da compra</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compras_produtos.each do |compra| %>
+      <tr>
+        <td><%= compra.data %></td>
+        <td><%= compra.status %></td>
+        <td><%= compra.pagamento %></td>
+        <td>
+          <% compra.produto_comprados.each do |item| %>
+            -<%= item.produto.nome %>,
+            <%= item.quantidade %> unidade(s)
+            <br>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', compra %></td>
+        <td><%= link_to 'Edit', edit_compra_produto_path(compra) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>

@@ -1,0 +1,38 @@
+<div class="conteudo">
+<h1>Vendas feitas ao cliente</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Status</th>
+      <th>Valor do pagamento</th>
+      <th>Desconto</th>
+      <th>Itens da venda</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitacoes_produtos.each do |venda| %>
+      <tr>
+        <td><%= venda.data %></td>
+        <td><%= venda.status %></td>
+        <td><%= venda.pagamento %></td>
+        <td><%= venda.desconto%></td>
+        <td>
+          <% venda.produto_solicitados.each do |item| %>
+            -<%= item.produto.nome %>,
+            <%= item.quantidade %> unidade(s)
+            <br>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', venda %></td>
+        <td><%= link_to 'Edit', edit_solicitacao_path(venda) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>

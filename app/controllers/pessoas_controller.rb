@@ -9,6 +9,10 @@ class PessoasController < ApplicationController
     @pessoas = Pessoa.search(params[:search], params[:id])
   end
 
+  def historico
+    @solicitacoes_produtos = Solicitacao.where(['pessoa_id = ?', params[:id]])
+  end
+
   # GET /pessoas/1
   # GET /pessoas/1.json
   def show

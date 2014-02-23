@@ -13,8 +13,9 @@ class FornecedoresController < ApplicationController
   def show
   end
 
-  def search
-   
+  def historico
+    @compras_materias_primas = CompraMateriaPrima.where(['fornecedor_id = ?', params[:id]])
+    @compras_produtos = CompraProduto.where(['fornecedor_id = ?', params[:id]])
   end
 
   # GET /fornecedores/new

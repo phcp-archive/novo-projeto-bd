@@ -9,7 +9,7 @@ class MateriaPrima < ActiveRecord::Base
 
 	def self.search(search, id)
 		if search
-			where(['nome LIKE ?', "%#{search}%"])
+			where(['nome LIKE ? OR codigo LIKE ?', "%#{search}%", "%#{search}%"])
 		else
 			scoped
 		end

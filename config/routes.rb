@@ -1,4 +1,5 @@
 ProjetoBd::Application.routes.draw do
+  get "relatorios/index"
   resources :solicitacoes
 
   resources :compra_produtos
@@ -25,8 +26,14 @@ ProjetoBd::Application.routes.draw do
 
   resources :home
 
+  resources :relatorios
+
   match 'login' => "user_sessions#new",      :as => :login,   via: [:get, :post]
   match 'logout' => "user_sessions#destroy", :as => :logout,  via: [:get, :post]
+
+  get 'fornecedores/:id/historico' => 'fornecedores#historico', as: 'historico_fornecedor'
+
+  get 'pessoas/:id/historico' => 'pessoas#historico', as: 'historico_cliente'
 
   resource :users
   resource :user, :as => 'account'  # a convenience route
