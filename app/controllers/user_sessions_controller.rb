@@ -10,7 +10,6 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     
     if @user_session.save
-      flash[:notice] = "Bem-vindo ao sistema!"
       redirect_back_or_default account_url(@current_user)
     else
       render :action => :new
@@ -19,7 +18,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = "Voce saiu do sistema."
     redirect_back_or_default new_user_session_url
   end
 end

@@ -27,9 +27,9 @@
           <%= materia_comprada.materia_prima.nome %>/<%= materia_comprada.quantidade %>, 
           <% end %>
         </td>
-        <td><%= link_to 'Show', compra_materia_prima %></td>
-        <td><%= link_to 'Edit', edit_compra_materia_prima_path(compra_materia_prima) %></td>
-        <td><%= link_to 'Destroy', compra_materia_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', compra_materia_prima %></td>
+        <td><%= link_to 'Editar', edit_compra_materia_prima_path(compra_materia_prima) %></td>
+        <td><%= link_to 'Apagar', compra_materia_prima, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,5 +37,5 @@
 
 <br>
 
-<%= link_to 'New Compra materia prima', new_compra_materia_prima_path %>
+<%= link_to 'Nova Compra de Matéria-Prima', new_compra_materia_prima_path %>
 </div>

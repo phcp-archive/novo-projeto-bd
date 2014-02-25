@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <strong>Juridico:</strong>
-  <%= @funcionario.juridico %>
-</p>
-
-<p>
   <strong>Cargo:</strong>
   <%= @funcionario.cargo %>
 </p>
@@ -30,5 +25,5 @@
   <%= @funcionario.senha %>
 </p>
 
-<%= link_to 'Edit', edit_funcionario_path(@funcionario) %> |
-<%= link_to 'Back', funcionarios_path %>
+<%= link_to 'Editar', edit_funcionario_path(@funcionario) %> |
+<%= link_to 'Voltar', funcionarios_path %>

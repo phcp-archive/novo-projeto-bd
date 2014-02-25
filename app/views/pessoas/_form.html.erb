@@ -23,10 +23,7 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :juridico %><br>
-    <%= f.check_box :juridico %>
-  </div>
+  <%= f.hidden_field :juridico,  :value => false %>
   <div class="field">
     <%= f.label :endereco %><br>
     <%= f.fields_for :endereco do |builder| %>

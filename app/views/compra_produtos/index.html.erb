@@ -28,9 +28,9 @@
           <%= produto_comprado.produto.nome %>/<%= produto_comprado.quantidade %>, 
           <% end %>
         </td>
-        <td><%= link_to 'Show', compra_produto %></td>
-        <td><%= link_to 'Edit', edit_compra_produto_path(compra_produto) %></td>
-        <td><%= link_to 'Destroy', compra_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', compra_produto %></td>
+        <td><%= link_to 'Editar', edit_compra_produto_path(compra_produto) %></td>
+        <td><%= link_to 'Apagar', compra_produto, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,5 +38,5 @@
 
 <br>
 
-<%= link_to 'New Compra produto', new_compra_produto_path %>
+<%= link_to 'Nova Compra de Produto', new_compra_produto_path %>
 </div>

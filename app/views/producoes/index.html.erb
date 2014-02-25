@@ -1,5 +1,5 @@
 <div class="conteudo">
-<h1>Producoes</h1>
+<h1>Produções</h1>
 
 <table>
   <thead>
@@ -25,9 +25,9 @@
           <%= materia_utilizada.materia_prima.nome %>/<%= materia_utilizada.quantidade %>, 
           <% end %>
         </td>
-        <td><%= link_to 'Show', producao %></td>
-        <td><%= link_to 'Edit', edit_producao_path(producao) %></td>
-        <td><%= link_to 'Destroy', producao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', producao %></td>
+        <td><%= link_to 'Editar', edit_producao_path(producao) %></td>
+        <td><%= link_to 'Apagar', producao, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,5 +35,5 @@
 
 <br>
 
-<%= link_to 'New Producao', new_producao_path %>
+<%= link_to 'Nova Produção', new_producao_path %>
 </div>

@@ -1,5 +1,5 @@
 <div class="conteudo">
-<h1>Solicitacoes</h1>
+<h1>Solicitações</h1>
 
 <div class="data">
 <!--Form de busca-->
@@ -40,9 +40,9 @@
           <%= produto_solicitado.produto.nome %>/<%= produto_solicitado.quantidade %>, 
           <% end %>
         </td>
-        <td><%= link_to 'Show', solicitacao %></td>
-        <td><%= link_to 'Edit', edit_solicitacao_path(solicitacao) %></td>
-        <td><%= link_to 'Destroy', solicitacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', solicitacao %></td>
+        <td><%= link_to 'Editar', edit_solicitacao_path(solicitacao) %></td>
+        <td><%= link_to 'Apagar', solicitacao, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -50,5 +50,5 @@
 
 <br>
 
-<%= link_to 'New Solicitacao', new_solicitacao_path %>
+<%= link_to 'Nova Solicitacao', new_solicitacao_path %>
 </div>

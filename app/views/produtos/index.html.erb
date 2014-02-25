@@ -14,9 +14,9 @@
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Preco</th>
+      <th>Preço</th>
       <th>Codigo</th>
-      <th>Descricao</th>
+      <th>Descrição</th>
       <th>Quantidade</th>
       <th></th>
       <th></th>
@@ -32,9 +32,9 @@
         <td><%= produto.codigo %></td>
         <td><%= produto.descricao %></td>
         <td><%= produto.quantidade %></td>
-        <td><%= link_to 'Show', produto %></td>
-        <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-        <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', produto %></td>
+        <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
+        <td><%= link_to 'Apagar', produto, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,5 +42,5 @@
 
 <br>
 
-<%= link_to 'New Produto', new_produto_path %>
+<%= link_to 'Novo Produto', new_produto_path %>
 </div>

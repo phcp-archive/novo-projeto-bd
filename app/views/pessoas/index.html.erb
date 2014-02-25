@@ -1,6 +1,5 @@
-<div class="conteudo">
 
-<h1>Pessoas</h1>
+<h1>Clientes</h1>
 <div class="data">
 <!--Form de busca-->
  <%= form_tag pessoas_path, :method => 'get'  do %>
@@ -34,9 +33,9 @@
         <td><%= pessoa.juridico %></td>
         <td><%= pessoa.endereco.logradouro %>, <%= pessoa.endereco.numero %>, <%= pessoa.endereco.cidade %>, <%= pessoa.endereco.estado %></td>
         <td>(<%= pessoa.telefone.ddd %>) <%= pessoa.telefone.numero %></td>
-        <td><%= link_to 'Show', pessoa %></td>
-        <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
-        <td><%= link_to 'Destroy', pessoa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', pessoa %></td>
+        <td><%= link_to 'Alterar', edit_pessoa_path(pessoa) %></td>
+        <td><%= link_to 'Apagar', pessoa, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -44,6 +43,4 @@
 
 <br>
 
-<%= link_to 'New Pessoa', new_pessoa_path %>
-
-</div>
+<%= link_to 'Novo Cliente', new_pessoa_path %>

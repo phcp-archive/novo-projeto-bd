@@ -1,14 +1,13 @@
-<div class="conteudo">
-<h1>Transações com o fornecedor</h1>
+<h1>Transações com o Fornecedor</h1>
 
 <table>
   <thead>
-    Compras de matéria-prima feitas ao fornecedor
+    Compras de Matéria-Prima feitas ao Fornecedor
     <tr>
       <th>Data</th>
       <th>Status</th>
-      <th>Valor do pagamento</th>
-      <th>Itens da compra</th>
+      <th>Valor do Pagamento</th>
+      <th>Itens da Compra</th>
     </tr>
   </thead>
 
@@ -25,8 +24,8 @@
             <br>
           <% end %>
         </td>
-        <td><%= link_to 'Show', compra %></td>
-        <td><%= link_to 'Edit', edit_compra_materia_prima_path(compra) %></td>
+        <td><%= link_to 'Detalhes', compra %></td>
+        <td><%= link_to 'Editar', edit_compra_materia_prima_path(compra) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,12 +33,12 @@
 
 <table>
   <thead>
-    Compras de produto feitas ao fornecedor
+    Compras de Produto feitas ao Fornecedor
     <tr>
       <th>Data</th>
       <th>Status</th>
-      <th>Valor do pagamento</th>
-      <th>Itens da compra</th>
+      <th>Valor do Pagamento</th>
+      <th>Itens da Compra</th>
     </tr>
   </thead>
 
@@ -56,8 +55,8 @@
             <br>
           <% end %>
         </td>
-        <td><%= link_to 'Show', compra %></td>
-        <td><%= link_to 'Edit', edit_compra_produto_path(compra) %></td>
+        <td><%= link_to 'Detalhes', compra %></td>
+        <td><%= link_to 'Editar', edit_compra_produto_path(compra) %></td>
       </tr>
     <% end %>
   </tbody>

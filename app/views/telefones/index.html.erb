@@ -4,9 +4,9 @@
 <table>
   <thead>
     <tr>
-      <th>Ddd</th>
+      <th>DDD</th>
       <th>Numero</th>
-      <th>Telefonavel</th>
+      <th>Pessoa</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,15 +19,12 @@
         <td><%= telefone.ddd %></td>
         <td><%= telefone.numero %></td>
         <td><%= telefone.telefonavel.nome %>/<%= telefone.telefonavel_type%></td>
-        <td><%= link_to 'Show', telefone %></td>
-        <td><%= link_to 'Edit', edit_telefone_path(telefone) %></td>
-        <td><%= link_to 'Destroy', telefone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', telefone %></td>
+        <td><%= link_to 'Editar', edit_telefone_path(telefone) %></td>
+        <td><%= link_to 'Apagar', telefone, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Telefone', new_telefone_path %>
 </div>

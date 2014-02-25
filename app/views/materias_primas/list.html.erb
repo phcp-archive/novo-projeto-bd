@@ -1,11 +1,11 @@
-<h1>Listing materias_primas</h1>
+<h1>Matérias-Primas</h1>
 
 <table>
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Codigo</th>
-      <th>Descricao</th>
+      <th>Código</th>
+      <th>Descrição</th>
       <th>Quantidade</th>
       <th></th>
       <th></th>
@@ -20,9 +20,9 @@
         <td><%= materia_prima.codigo %></td>
         <td><%= materia_prima.descricao %></td>
         <td><%= materia_prima.quantidade %></td>
-        <td><%= link_to 'Show', materia_prima %></td>
-        <td><%= link_to 'Edit', edit_materia_prima_path(materia_prima) %></td>
-        <td><%= link_to 'Destroy', materia_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', materia_prima %></td>
+        <td><%= link_to 'Editar', edit_materia_prima_path(materia_prima) %></td>
+        <td><%= link_to 'Apagar', materia_prima, method: :delete, data: { confirm: 'Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Materia prima', new_materia_prima_path %>
+<%= link_to 'Nova Matéria-Prima', new_materia_prima_path %>

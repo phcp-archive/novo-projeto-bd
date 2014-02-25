@@ -16,7 +16,6 @@
       <th>Nome</th>
       <th>Cadastro</th>
       <th>Email</th>
-      <th>Juridico</th>
       <th>Cargo</th>
       <th>Senha</th>
       <th></th>
@@ -31,10 +30,9 @@
         <td><%= funcionario.nome %></td>
         <td><%= funcionario.cadastro %></td>
         <td><%= funcionario.email %></td>
-        <td><%= funcionario.juridico %></td>
         <td><%= funcionario.cargo %></td>
         <td><%= funcionario.senha %></td>
-        <td><%= link_to 'Show', funcionario %></td>
+        <td><%= link_to 'Detalhes', funcionario %></td>
         <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
         <td><%= link_to 'Destroy', funcionario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
